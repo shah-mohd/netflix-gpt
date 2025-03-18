@@ -1,8 +1,9 @@
+import Body from "./components/Body"
 
 function App() {
   return (
     <>
-      <p className="bg-gray-200 text-2xl">NETFLIX GPT</p>
+      <Body />
     </>
   )
 }
