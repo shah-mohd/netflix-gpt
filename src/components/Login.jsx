@@ -41,9 +41,7 @@ const Login = () => {
         dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
       }).catch((error) => {
         setErrorMessage(error.message);
-      });
-
-      
+      }); 
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -73,7 +71,8 @@ const Login = () => {
   }
 
   return (
-    <div className='bg-black h-svh md:overflow-auto
+    // <div className='fixed'>
+    <div className='bg-black h-svh md:overflow-auto fixed
     md:pb-33 md:bg-[url(https://assets.nflxext.com/ffe/siteui/vlv3/50fcc930-ba3f-4cae-9257-9f920e30a998/web/IN-en-20250310-TRIFECTA-perspective_739387a0-ff14-44ed-a5af-36e5aa4d236e_large.jpg)]
     bg-center bg-cover'>
 
@@ -90,38 +89,39 @@ const Login = () => {
         
         {!isSignInForm && <input
         ref={name}
-        className='my-4 p-4 w-full bg-gray-700'
+        className='my-4 p-2 w-full bg-gray-700'
         type='text'
         placeholder='Full Name'
         />}
 
         <input
         ref={email}
-        className='my-4 p-4 w-full bg-gray-700'
+        className='my-4 p-2 w-full bg-gray-700'
         type='text'
         placeholder='Email'
         />
 
         <input
         ref={password}
-        className='my-4 p-4 w-full bg-gray-700'
+        className='my-4 p-2 w-full bg-gray-700'
         type='password'
         placeholder='Password'
         />
 
-        <p className='text-red-500 text-lg'>{errorMessage}</p>
+        <p className='text-red-500 text-sm'>{errorMessage}</p>
 
-        <button className='my-6 p-4 bg-red-700 w-full rounded-lg' onClick={handleButtonClick}>
+        <button className='my-6 p-2 bg-red-700 w-full rounded-lg' onClick={handleButtonClick}>
           {isSignInForm ? 'Sign In' : 'Sign Up'}
         </button>
 
-        <p className='py-4 cursor-pointer' onClick={toggeleSignInForm}>
+        <p className='py-4 cursor-pointer text-sm' onClick={toggeleSignInForm}>
          {isSignInForm ? 'New to Netflix? Sign Up now' : 'Already registered? Sign In now.'}
         </p>
 
       </form>
 
     </div>
+    // </div>
   )
 }
 
