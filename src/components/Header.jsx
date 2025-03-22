@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
 import { LOGO } from '../utils/constants';
 
-const Header = () => {
+const Header = ({style}) => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ const Header = () => {
   }, []);
 
   return (
-    <div className='w-screen px-4 py-2 bg-gradient-to-b from-black z-10 flex justify-between'>
+    <div className='w-screen px-4 py-2 bg-gradient-to-b from-black z-10 flex justify-between' style={style}>
         <img
         className='w-30 sm:w-44'
         src={LOGO}
